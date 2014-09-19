@@ -40,23 +40,23 @@
 	div = $("#hirePeep"); 
 	div.append('<div style="text-align:center;margin-left:50px;width: 675px">Welcome to the Contractor center!<BR /> Here you can hire design or technology contractors, based on how much you pay they will contribute tech and design points. Change the slider to see how many points you can get for a certain amount of money.</div><br /> <br />');
 	div.append('<div id="techInfo" class="windowTitle smallerWindowTitle" style="margin-top:20px;">Tech Contractors</div>');
-	div.append('<div id="techHire" style="text-align:center;margin-left:50px;width:675px;heigth:50px">Money to spend: $0</div>'); //ShareValue
-	div.append('<div id="STUF" style="text-align:center;margin-left:50px;width:675px;heigth:50px">Extra Tech Points: 0</div>'); //MaxAmountOfShares
+	div.append('<div id="techHire" style="text-align:center;margin-left:50px;width:675px;heigth:50px">Money to spend: $0</div>');
+	div.append('<div id="STUF" style="text-align:center;margin-left:50px;width:675px;heigth:50px">Extra Tech Points: 0</div>');
 	div.append('<div id="techPay" style="margin-left:50px;width:675px;" class="WOW"></div>');
 	div.append('<div id="hireTech" class="selectorButton whiteButton" onclick="UI.fullSwitch(this)" style="margin-left:50px;width: 675px">Hire Contractors</div><br /> <br />');
 	div.append('<div id="desInfo" class="windowTitle smallerWindowTitle" style="margin-top:20px;">Design Contractors</div>');
-	div.append('<div id="designHire" style="text-align:center;margin-left:50px;width:675px;heigth:50px">Money to spend: $0</div>'); //ShareValue
-	div.append('<div id="STUFS" style="text-align:center;margin-left:50px;width:675px;heigth:50px">Extra Design Points: 0</div>'); //MaxAmountOfShares
+	div.append('<div id="designHire" style="text-align:center;margin-left:50px;width:675px;heigth:50px">Money to spend: $0</div>');
+	div.append('<div id="STUFS" style="text-align:center;margin-left:50px;width:675px;heigth:50px">Extra Design Points: 0</div>');
 	div.append('<div id="designPay" style="margin-left:50px;width:675px;" class="WOWW"></div>');
 	div.append('<div id="hireDes" class="selectorButton whiteButton" onclick="UI.fullSwitch(this)" style="margin-left:50px;width: 675px">Hire Contractors</div>');
 	
-	function totalShares(z) {
+	function updateInfo(z) {
 		if (z == null) z = 0; 
 		div.find("#techHire").html("Money to spend: $" + UI.getShortNumberString(z));
 		div.find("#STUF").html("Extra Tech Points: " + Math.floor(z/2000));
 	};
 
-	function totalSharess(z) {
+	function updateInfoo(z) {
 		if (z == null) z = 0; 
 		div.find("#designHire").html("Money to spend: $" + UI.getShortNumberString(z));
 		div.find("#STUFS").html("Extra Design Points: " + Math.floor(z/2000));
@@ -103,7 +103,7 @@
 				animate: !1,
 				slide: function (a, b) {
 					hiredAm = b.value;
-					totalShares(hiredAm);
+					updateInfo(hiredAm);
 				}
 			});
 			div.find(".WOWW").slider({
@@ -114,10 +114,9 @@
 				animate: !1,
 				slide: function (a, b) {
 					hiredAm = b.value;
-					totalSharess(hiredAm);
+					updateInfoo(hiredAm);
 				}
 			});
-			//totalShares(shareAmount);
 			OriginalContextMenu(items, mouseloc);
 		} else {
 			OriginalContextMenu(items, mouseloc);

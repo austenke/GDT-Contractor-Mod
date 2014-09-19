@@ -1,0 +1,13 @@
+{
+    "id": "CMD",
+    "name": "Contractor Mod",
+    "version": "0.5",
+    "author": "austenke",
+    "url": "",
+    "description": "Tired of being a contractor and feel like hiring your own? Now you can! This mod lets you pay money to hire contractors to add design and tech points to your game! For more information please see the Steam Workshop or forums description.",
+    "main": "./main.js",
+    "dependencies": {
+        "gdt-modAPI": "0.1.x"
+    },
+    "image": "contractorMod-Thumbnail.png"
+}
